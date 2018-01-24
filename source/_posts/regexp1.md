@@ -2,7 +2,7 @@
 title: RegExp正则表达式基本使用
 date: 2017-12-12 22:08:02
 tags: 正则基本使用
-categories: 教程
+categories: JS
 ---
 
 
