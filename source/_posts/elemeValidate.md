@@ -2,7 +2,7 @@
 title: 饿了么element表单验证插件
 date: 2018-01-20 15:24:03
 tags: [element, 表单验证]
-categories: 教程
+categories: validate
 ---
 
 ![插图](http://p1cjg886l.bkt.clouddn.com/ele5.jpg)
