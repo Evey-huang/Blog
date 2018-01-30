@@ -1,8 +1,30 @@
-# Blog
-hexo静态博客的源码
+# Evey-huang's Blog
+The blog for Hexo.You can see the generated files at [Evey-huang/Evey-huang.github.io](https://github.com/Evey-huang/Evey-huang.github.io)repository.
 
-# 使用
-- git clone https://github.com/Evey-huang/Blog.git
-- cd Blog
-- npm install
-- hexo s (启动)
+# Getting started
+
+### Install dependencies
+
+```shell
+$ git clone  https://github.com/Evey-huang/Hexo-Blog.git
+$ cd Hexo-Blog
+$ npm install
+
+```
+
+### Generate
+
+```shell
+$ hexo generate
+or
+$ hexo g
+```
+
+### Run server
+
+```shell
+$ hexo server
+or
+$ hexo s
+```
+

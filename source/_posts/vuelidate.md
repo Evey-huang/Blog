@@ -2,7 +2,7 @@
 title: Vuelidate表单验证插件
 date: 2017-12-12 22:14:10
 tags: validate 表单验证插件
-categories: 教程
+categories: validate
 ---
 
 
