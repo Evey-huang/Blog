@@ -2,7 +2,7 @@
 title: 将本地项目上传到github
 date: 2017-12-10 22:31:25
 tags: github
-categories: 教程
+categories: git
 ---
 
 #### 本地创建一个项目

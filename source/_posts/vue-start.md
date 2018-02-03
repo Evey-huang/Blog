@@ -2,7 +2,7 @@
 title: 新建Vue项目
 date: 2017-12-04 10:04:43
 tags: vue 教程
-categories: 教程
+categories: vue
 ---
 
 
