@@ -1,8 +1,8 @@
 ---
-title: Ubuntu系统安装Xmind
+title: Ubuntu下安装Xmind
 date: 2017-12-12 21:54:28
-tags: xmind
-categories: 教程
+tags: [ubuntu, xmind]
+categories: Ubuntu
 ---
 
 

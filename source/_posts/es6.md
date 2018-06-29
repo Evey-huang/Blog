@@ -2,7 +2,7 @@
 title: 使用ES6的浏览器兼容性问题
 date: 2018-01-20 11:38:18
 tags: [ES6, 单元测试]
-categories: 单元测试
+categories: 测试
 ---
 
 ![插图](http://p1cjg886l.bkt.clouddn.com/es1.jpg)

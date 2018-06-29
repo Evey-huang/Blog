@@ -2,7 +2,7 @@
 title: 第一个单元测试
 date: 2017-12-06 16:42:08
 tags: [单元测试, unit test]
-categories: 单元测试
+categories: 测试
 ---
 
 ![JPG](http://p1cjg886l.bkt.clouddn.com/unit-vue1.jpg)

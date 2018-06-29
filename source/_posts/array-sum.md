@@ -2,7 +2,7 @@
 title: 数组求和
 date: 2018-04-04 00:08:44
 tags: [JS, 数组求和]
-categories: JS编程题
+categories: JS
 ---
 
 

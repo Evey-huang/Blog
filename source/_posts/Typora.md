@@ -1,8 +1,8 @@
 ---
-title: Typora
+title: Ubuntu下安装Typora
 date: 2017-11-30 09:42:22
-tags: [Typora, markdown]
-categories: 教程
+tags: [Typora, ubuntu]
+categories: Ubuntu
 ---
 
 ## ![Typora](https://eveywongblog.files.wordpress.com/2017/10/typora.png)

@@ -2,7 +2,7 @@
 title: 从自动化测试到持续集成
 date: 2017-12-20 16:53:47
 tags: [jenkins, 持续集成, 自动化测试]
-categories: 单元测试
+categories: 测试
 ---
 
 ## 背景

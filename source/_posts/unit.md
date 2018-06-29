@@ -2,7 +2,7 @@
 title: 前端单元测试初探
 date: 2017-12-08 14:49:26
 tags: [karma, mocha, chai, 单元测试]
-categories: 单元测试
+categories: 测试
 ---
 
 
