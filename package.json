@@ -17,6 +17,9 @@
     "hexo-renderer-marked": "^0.3.0",
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.2.0",
-    "hexo-tag-post-link": "^1.0.6"
+    "hexo-tag-post-link": "^1.0.6",
+    "marked": "^0.3.9",
+    "moment": "^2.19.3",
+    "uglify-js": "^2.6.0"
   }
 }
