@@ -1,8 +1,8 @@
 ---
 title: vue-cli脚手架webpack模板项目配置文件分析
 date: 2017-12-29 16:45:57
-tags: webpack
-categories: 教程
+tags: [webpack, vue]
+categories: vue
 ---
 
 ![webpack插图](http://p1cjg886l.bkt.clouddn.com/webpack.jpg)

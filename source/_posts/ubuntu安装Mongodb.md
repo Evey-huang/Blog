@@ -1,9 +1,29 @@
 ---
-title: ubuntu安装Mongodb
+title: ubuntu/Mac OSX安装Mongodb
 date: 2018-06-28 11:54:03
-tags: [ubuntu16.04, ubuntu18.04, mongodb]
+tags: [ubuntu16.04, ubuntu18.04, MacOSX, mongodb]
 categories: Ubuntu
 ---
+
+## Mac OSX安装mongodb
+
+- 安装mongodb
+
+```shell
+brew install mongodb
+```
+
+- 启动mongodb
+
+```shell
+mongod --config /usr/local/etc/mongod.conf
+```
+
+- 连接到mongo
+
+```shell
+mongo
+```
 
 
 

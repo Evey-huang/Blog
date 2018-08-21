@@ -1,8 +1,8 @@
 ---
 title: 使用NAP安装包失败解决办法
 date: 2018-06-28 18:40:27
-tags: [NAP]
-categories: 其他
+tags: NAP
+categories: NPM
 ---
 
 #### 方法一：通过config命令
