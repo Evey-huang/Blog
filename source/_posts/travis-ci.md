@@ -2,7 +2,7 @@
 title: 持续集成服务Travis CI了解下
 date: 2018-09-26 14:40:38
 tags: [Travis CI, 持续集成服务]
-Categories: React
+categories: git
 ---
 
 ## 什么是持续集成
