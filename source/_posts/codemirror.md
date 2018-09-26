@@ -224,5 +224,3 @@ options = {
 ## 其他
 
 更多用法[戳这里](https://codemirror.net/)
-
-更多预览效果[戳这里](
