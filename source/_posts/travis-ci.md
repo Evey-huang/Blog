@@ -34,7 +34,7 @@ Travis CI是一个在线的、分布式的持续集成服务，用来构建及�
 
 ![Travis CI](http://p1cjg886l.bkt.clouddn.com/travis1.png)
 
-4. 到Github仓库获取TOKEN。打开`setting`->`Developer seeing`->`Personal access tokens`
+4. 到Github仓库获取TOKEN。打开`setting`->`Developer settings`->`Personal access tokens`
 
 ![Travis CI](http://p1cjg886l.bkt.clouddn.com/travis2.png)
 
