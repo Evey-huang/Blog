@@ -8,7 +8,7 @@ then
 		    exit 0
 		fi
 		rev=$(git rev-parse --short HEAD)
-		cd _book
+		cd public
 		git init
 		git config user.name "Travis"
 		git config user.email "evey_wong@163.com"
