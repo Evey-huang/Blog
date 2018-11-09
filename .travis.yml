@@ -1,14 +1,10 @@
-os: osx
 language: node_js
 node_js:
 - 10.13.0
 install:
 - npm install hexo-cli -g
-- npm install hexo-generator-feed --save
-- npm install hexo --save
+- npm install
 script:
-- ls -a
-- echo "Build Passed"
 - hexo generate
 after_success:
 - sh build.sh
