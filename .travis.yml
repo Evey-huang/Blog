@@ -1,6 +1,7 @@
+os: osx
 language: node_js
 node_js:
-- latest
+- 10.13.0
 install:
 - npm install hexo-cli -g
 script:
