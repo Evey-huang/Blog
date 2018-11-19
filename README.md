@@ -1,6 +1,8 @@
 # Evey-huang's Blog
 The blog for Hexo.You can see the generated files at [Evey-huang/Evey-huang.github.io](https://github.com/Evey-huang/Evey-huang.github.io)repository.
 
+[![Build Status](https://travis-ci.org/Evey-huang/Blog.svg?branch=master)](https://travis-ci.org/Evey-huang/Blog)
+
 # Getting started
 
 ### Install dependencies
