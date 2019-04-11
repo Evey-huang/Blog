@@ -1,6 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[近况]]></title>
+    <url>%2F2019%2F04%2F11%2Frecent%2F</url>
+    <content type="text"><![CDATA[好久没有更博了，讲讲近况。 工作最近一直忙于项目重构，技术栈由Vue变成了React 因为没学过React做起来比较吃力也遇到了很多问题，在长达一个月的时间里心情都比较Down，心情很容易受工作影响 现在慢慢能做好事情了，近期遇到的问题也一一解决了（虽然花的时间有点长，但好歹自己解决了） 虽然知道后面还会遇到很多问题但是还是很开心，因为看到了自己的进步和得到了领导的肯定。 结论：遇到问题真的不能急，要好好分析，一步一步做，总能解决的，着急容易捋不清思路然后就觉得很难自己做不来，很打击自信心。 生活 终于报驾校啦，下周要考科一啦，希望今年能顺利拿到驾驶证 终于把牙齿补了，真的要好好爱护牙齿呀，轻微蛀牙也要及时去补！！ 在开始上英语口语课了，但是频率不是很高，希望自己能坚持住 很少在家做饭了，希望还是要多做饭 最近很少追剧了（主要是没什么剧好看），又把阅读的习惯捡起来了，希望能keep住，尽量保持每周都有阅读 未来最近因为焦虑思考了很多，觉得自己还是不能太闲鱼，要好好努力赚钱呀，希望今年能重构一下自己，多投资一下自己，无论工作还是生活都要积极一点。]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[isNaN()与typeof比较]]></title>
+    <url>%2F2018%2F12%2F28%2Ftypeof%2F</url>
+    <content type="text"><![CDATA[日常写bug，有个业务需求需要判断参数是否为数值，首先想到的是用isNaN()，后同事建议用typeof正向判断较佳，写此文做记录。 isNaN()isNaN() 函数用于检查其参数是否是非数字值。 例：123456isNaN(null) // falseisNaN(undefined) // trueisNaN(NaN) // trueisNaN('') // falseisNaN(123) // falseisNaN('x') // true typeofJavaScript typeof是一个一元运算符，用来检查数据类型，检查完后会回传一个字符串，对于不同的数据类型会返回不同的字符串。typeof返回值有六种： number object string boolean function undefined 以number为例，检查参数是否为数值：123456typeof '123' === 'number' // falsetypeof '' === 'number' // falsetypeof null === 'number' //falsetypeof undefined === 'number' //falsetypeof 123 === 'number' // truetypeof NaN === 'number' // true 因为isNaN(null)为false，不太符合业务需求，所以最终选择typeof用于检查参数是否为数值（敲黑板！后端一般不会传NaN值，故无影响）。]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>typeof</tag>
+        <tag>isNaN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[交换机之VLAN]]></title>
+    <url>%2F2018%2F11%2F22%2Fvlan%2F</url>
+    <content type="text"><![CDATA[VLANVLAN：VLAN(Virtual local area network)是一组与位置无关的逻辑端口。VLAN相当于一个独立的三层网络。 常规的部署是节点连接到交换机，交换机连接到路由器。所有的节点都位于同一IP网络，因为他们都连接到路由器同一接口。即在缺省情况下，所有节点实际上都是同一VLAN。例如：Cisco设备默认VLAN是VLAN1，也成为管理VLAN。默认配置下包含所有的端口，体现在源地址表(source address table,SAT)中，该表用于交换机按照目的MAC地址将帧转发至合适的二层端口。引入VLAN之后，源地址表按照VLAN将端口与MAC地址相对应起来，从而使得交换机能够作出更多高级转发决策。 另一种常用的拓扑结构是两个交换机被一个路由器分离开来，如图所示： 这种拓扑逻辑在两个地方类似于多VLAN：同一VLAN下的节点共享一个通用地址，非本地数据流（对应多VLAN情况不同VLAN的节点）需通过路由器转发。 每一个VLAN相当于一个独立的三层IP网络，因此192.168.1.0上的节点试图与192.168.2.0上的节点通信时，不同VLAN通信必须通过路由器，即使所有设备都连接到同一交换机。二层单播、多播和广播数据只会在同一VLAN内转发及泛洪，因此VLAN1产生的数据不会为VLAN2节点所见。只有交换机能看得到VLAN，节点和路由器都感觉不到VLAN的存在。添加了路由决策之后，可以利用3层的功能来实现更多的安全设定、更多的流量以及负载均衡。 VLAN的作用 安全性：将敏感数据与网络其他部分隔离开，减少保密信息遭到破坏的可能性。 节约成本：无需昂贵的网络升级，并且带宽及上行链路利用率更加有效。 性能提高：将二层网络划分成多个逻辑工作组（广播域）减少网络间不必要的数据流并提升性能。 缩小广播域：减少一个广播域上的设备数量。 提升IT管理效率：网络需求相似的用户共享同一VLAN，使得网络管理更为简单。当添加一个新的交换机，在指定端口VLAN时，所有策略和步骤已配置好。 简化项目和应用管理：VLAN将用户和网络设备汇集起来，以支持不同的业务或地理位置需求。 交换机间的VLAN 两个交换机VLAN相同，都是默认VLAN1，即两个交换机之间的联系在同一个VLAN内，路由器是所有节点的出口。这时单播、多播和广播数据自由传输，所有节点属于同一IP地址。这时通信不会有问题，因为交换机的SAT显示它们在同一VLAN。如图所示： 以下连接方式就会有问题。由于VLAN在连接端口的主机之间创建了三层边界，它们将无法通信。问题有： 所有主机都在同一IP网，尽管连接到不同的VLAN。 路由器在VLAN1，因此与所有节点隔离。 两台交换机通过不同的VLAN互连，每一点都会造成通信阻碍，合在一起，网络各元素之间会完全无法通信。 通过trunk连接交换机，在网络间传载VLAN信息。如图所示： 对之前拓扑的改进包括： PC1和PC2分配到192.168.1.0网段以及VLAN2 PC3和PC4分配到192.168.2.0网段以及VLAN3 路由器接口连接VLAN2和VLAN3 交换机间通过trunk线互连 什么是TrunkTrunk是在两个网络设备之间承载多于一种VLAN的端到端的连接，将VLAN延伸至整个网络。VLAN Trunk允许VLAN数据流在交换机间传输，所以设备在同一VLAN，但连接到不同交换机，能够不通过路由器来进行通信。一个VLAN Trunk不属于某一特定VLAN，而是交换机和路由器间多个VLAN的通道。 当安装好trunk线之后，帧在trunk线传输就可以使用trunk协议来修改以太网帧。这也就是意味着交换机端口有不止一种操作模式。缺省情况下，所有端口都称之为接入端口（access）；当一个端口用于交换机间互连传输VLAN信息时，这种端口模式称之为trunk。 Native VLANNative VLAN是trunk上才有的概念.主要的目的是不丢弃非标记帧(untagged).接收方交换机把所有接收到的未标记的数据包转发到NATIVE VLAN中,而不是丢弃.默认是VLAN1。 简单的来说Native Vlan 是802。1Q协议封装下的一种特殊Vlan,来自该VLAN的流量在穿越TRUNK接口时不打TAG，缺省时VLAN1为Native Vlan 。 Allowed VLANAllowed VLAN在trunk中传输数据时要被添加标记（即tagged）。]]></content>
+      <categories>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>vlan</tag>
+        <tag>native vlan</tag>
+        <tag>allowed vlan</tag>
+        <tag>交换机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[规范commit message]]></title>
+    <url>%2F2018%2F11%2F22%2FcommitMessage%2F</url>
+    <content type="text"><![CDATA[为什么需要标准化的commit message 提供更多的历史信息，方便快速浏览 可以直接从commit生成Changelog 为了装B 如何规范commit messagecommit规范可以通过以下工具来约束： commitlint:用来校验 git commit message 的工具 husky:可以防止坏的git commit commitizen:用来格式化 git commit message 的工具 Install commitlint1npm install --save-dev @commitlint/cli @commitlint/config-conventional 在项目中添加commitlint.config.js文件 1module.exports = &#123;extends: ['@commitlint/config-conventional']&#125; Install husky1npm install --save-dev husky 在package.json中添加 123456"husky": &#123; "hooks": &#123; "pre-commit": "npm test", "commit-msg": "commitlint -E HUSKY_GIT_PARAMS" &#125; &#125;, Testwrong correct Install commitizen123npm install -g commitizennpm install cz-conventional-changelog --save-dev // changelog，是生成changelog的工具commitizen init cz-conventional-changelog --save-dev --save-exact // 使其支持Angular的Commit message格式 在package.json中添加 12345"config": &#123; "commitizen": &#123; "path": "./node_modules/cz-conventional-changelog" &#125; &#125;, Use git cz instead of git commit when committing Test Commit Type feat：新功能（new feature） fix：修补bug（bug fix） docs：文档更新（documentation change） style：格式，不影响代码运行的变动（not affect the meaning of the code） refactor：重构，既不是新增功能也不是修补bug的代码变动（a code change that neither fixes a bug nor a feature） perf：性能，提高性能的代码变动（a code change that improves performance） test：增加测试 build：涉及构建系统和依赖的修改，比如npm、gulp ci：涉及CI配置文件的修改，比如travis chore：构建过程或辅助工具的变动（other changes that don’t modify src or test files） revert：恢复之前的提交]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>commit message</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[2018读书书单]]></title>
+    <url>%2F2018%2F11%2F19%2Fread2018%2F</url>
+    <content type="text"><![CDATA[其实今年有读挺多书，但是一直懒得写读书笔记，据不完全统计，以下是今年读过的书： 你一年的8760小时-艾力（励志书偶尔看就可以了） 单恋 - 东野圭吾 彷徨之刃 - 东野圭吾 谁杀了她 - 东野圭吾 没有凶手的暗夜 - 东野圭吾 幻夜 - 东野圭吾（看完这一本书之后就再也不想看东野圭吾的作品了） 幸存者 - 法医秦明（高中最喜欢的厕所读物） 明朝那些事儿 - 当年明月（花了很长时间读完的，觉得挺有趣） 笑场 - 李诞（因为喜欢李诞所以才读的） 黄金时代 - 王小波（三十而立那一章节最有意思） 围城 - 钱钟书（听了围城的大名很多年，终于鼓起勇气读了） 亲密关系 - Christopher Moon（读这本书收获很多，疯狂安利身边的人读） 胡兰成自传：今生今世 - 胡兰成（看锵锵三人行讲到这本书） 龙族(第五部) - 江南（满满都是青春，不知何时才更完） 活着活着就老了 - 冯唐（距离4年再读冯唐作品） 目前手上还有好几本李银河的作品和万历十五年这本书，目测今年读不完了，毕竟距离12月很近了，如果有时间还想重温一下《红楼梦》、《水浒传》和《三国演义》，毕竟看这三本书是十年前的事了，如今再重温肯定会有不一样的收获。]]></content>
+      <categories>
+        <category>读书</category>
+      </categories>
+      <tags>
+        <tag>2018读书书单</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[TCP协议的三次握手和四次分手]]></title>
     <url>%2F2018%2F11%2F08%2Ftcp%2F</url>
     <content type="text"><![CDATA[# 三次握手什么是三次握手 第一次握手：建立连接。客户端发送连接请求报文段，将SYN位置为1，Sequence Number为x；然后客户端进入SYN_SEND状态，等待服务器的确认。 第二次握手：服务器收到SYN报文段。服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为x+1(Sequence Number+1)；同时，自己自己还要发送SYN请求信息，将SYN位置为1，Sequence Number为y；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RECV状态； 第三次握手：客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为y+1（Sequence Number + 1），向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。 为什么要进行三次握手为了防止服务器一直等待而浪费资源 假设不采用“三次握手”，那么只要server发出确认，新的连接就建立了。由于现在client并没有发出建立连接的请求，因此不会理睬server的确认，也不会向server发送数据。但server却以为新的运输连接已经建立，并一直等待client发来数据，这样会白白浪费server很多资源。 四次分手什么是四次分手 第一次分手：主机1（客户端/服务器）设置Sequence Number和Acknowledgment Number向主机2发送一个FIN报文段，此时主机1进入FIN_WAIT_1状态，这表示主机1没有数据要发送给主机2了。 第二次分手：主机2收到主机1发送的FIN报文段，向主机1回一个ACK报文段，Acknowledgment Number为Sequence Number+1；主机1进入FIN_WAIT_2状态，这表示主机2告诉主机1“我同意你的关闭请求”。 第三次分手：主机2向向主机1发送FIN报文段，请求关闭连接，同时主机2进入LAST_WAIT状态。 第四次分手：主机1收到主机2发送的FIN报文段，向主机2发送ACK报文段，然后主机1进入TIME_WAIT状态；主机2收到主机1的ACK报文段以后，就关闭连接，此时主机1等待2MSL（最大报文段生存时间）后依然没有收到回复，则证明Server端已正常关闭，然后主机1也可以关闭连接了。 ❓为什么当客户端进入TIME-WAIT状态的时候必须经过时间计数器设置的时间2MSL后才能进入CLOSED状态？ A: 为了保证客户端发送的最后一个ACK报文段能够到达服务器。因为这个ACK有可能丢失，从而导致处在LAST-ACK状态的服务器收不到对FIN-ACK的确认报文。服务器会超时重传这个FIN-ACK，接着客户端再重传一次确认，重新启动时间等待计时器。最后客户端和服务器都能正常的关闭。假设客户端不等待2MSL，而是在发送完ACK之后直接释放关闭，一但这个ACK丢失的话，服务器就无法正常的进入关闭连接状态。 他还可以防止已失效的报文段。客户端在发送最后一个ACK之后，再经过经过2MSL，就可以使本链接持续时间内所产生的所有报文段都从网络中消失。从保证在关闭连接后不会有还在网络中滞留的报文段去骚扰服务器。 为什么要进行四次分手TCP协议是一种面向连接的、可靠的、基于字节流的运输层通信协议。TCP是全双工模式，这就意味着， 当主机1发出FIN报文段时，只是表示主机1已经没有数据要发送了，主机1告诉主机2，它的数据已经全部发送完毕了；但是，这个时候主机1还是可以接受来自主机2的数据。 当主机2返回ACK报文段时，表示它已经知道主机1没有数据发送了，但是主机2还是可以发送数据到主机1的； 当主机2也发送了FIN报文段时，这个时候就表示主机2也没有数据要发送了，就会告诉主机1，我也没有数据要发送了，之后彼此就会愉快的中断这次TCP连接。 一些说明 Sequence Number：用来标识从TCP发端向TCP收端发送的数据字节流，它表示在这个报文段中的第一个数据字节在数据流中的序号； Acknowledgment Number：32位确认序列号包含发送确认的一端所期望收到的下一个序号，因此确认序号应当是上次已成功收到数据字节序号加1（只有当标志位中的ACK=1时该确认序列号的字段才有效）； TCP Flags：TCP首部中有6个标志比特，主要用于操控TCP的状态机，依次为URG、ACK、PSH、RST、SYN、FIN。 ACK：表示应答域有效，为1时表示应答域有效，反之为0。 SYN：表示同步序号，用来建立连接。 当连接请求时，SYN=1，ACK=0 当连接被响应时，SYN=1，ACK=1 FIN：表示发送端已经大道数据末尾，也就是双方的数据传送完成，没有数据可以传送了，发送FIN标志位的TCP数据包后，连接将被断开。 FIN_WAIT_1：其实FIN_WAIT_1和FIN_WAIT_2状态的真正含义都是表示等待对方的FIN报文。而这两种状态的区别是：FIN_WAIT_1状态实际上是当SOCKET在ESTABLISHED状态时，它想主动关闭连接，向对方发送了FIN报文，此时该SOCKET即进入到FIN_WAIT_1状态。而当对方回应ACK报文后，则进入到FIN_WAIT_2状态，当然在实际的正常情况下，无论对方何种情况下，都应该马上回应ACK报文，所以FIN_WAIT_1状态一般是比较难见到的，而FIN_WAIT_2状态还有时常常可以用netstat看到。（主动方） FIN_WAIT_2：FIN_WAIT_2状态下的SOCKET，表示半连接，也即有一方要求close连接，但另外还告诉对方，我暂时还有点数据需要传送给你(ACK信息)，稍后再关闭连接。（主动方） LAST_WAIT：它是被动关闭一方在发送FIN报文后，最后等待对方的ACK报文。当收到ACK报文后，也即可以进入到CLOSED可用状态了。（被动方） TIME_WAIT：表示收到了对方的FIN报文，并发送出了ACK报文，就等2MSL后即可回到CLOSED可用状态了。如果FINWAIT1状态下，收到了对方同时带FIN标志和ACK标志的报文时，可以直接进入到TIME_WAIT状态，而无须经过FIN_WAIT_2状态。（主动方） CLOSED：表示连接中断]]></content>
@@ -49,7 +109,7 @@
   <entry>
     <title><![CDATA[持续集成服务Travis CI了解下]]></title>
     <url>%2F2018%2F09%2F26%2Ftravis-ci%2F</url>
-    <content type="text"><![CDATA[什么是持续集成持续集成(Continuous Integration,简称CI)，指的是在一个项目中，任何人对代码库的任何改动都会触发CI服务器自动对项目进行构建，自动运行测试，甚至自动部署到测试环境。优点是随时发现问题，随时修复。 如何为Github上托管的开源项目用Travis CI进行持续集成什么是Travis CITravis CI是一个在线的、分布式的持续集成服务，用来构建及测试在Github托管的代码。 使用Travis CI先决环境要开始使用Travis CI，需要满足以下条件： 拥有一个Github账户 拥有Github上托管的项目的所有者权限 开始使用Travis CI 访问官方网站https://travis-ci.org/，使用github账户登入Travis CI 接受Travis CI的授权。 单击绿色激活按钮，然后选择要与Travis CI一起使用的项目 到Github仓库获取TOKEN。打开setting-&gt;Developer seeing-&gt;Personal access tokens 到Travis添加TOKEN。setting-&gt;Environment Variables 添加.travis.yml文件到存储库以告知Travis CI要执行的操作。 12345678910language: "node_js"node_js: - "node"install: - "npm install gitbook -g" - "npm install -g gitbook-cli"script: - "gitbook build"after_success: - "sh build.sh" 添加build.sh脚本文件到存储库 123456789101112131415161718192021#!/bin/bashset -o errexit -o nounsetTRAVIS_BRANCH=masterif [ "$TRAVIS_BRANCH" != "master" ]then echo "This commit was made against the $TRAVIS_BRANCH and not the master! No deploy!" exit 0 fi rev=$(git rev-parse --short HEAD) cd _book git init git config user.name "Travis" git config user.email "evey_wong@163.com" git remote add upstream https://evey-huang:$TOKEN@github.com/yznu-cn/yznu-cn.github.io.git git fetch upstream git reset upstream/master #echo "custom domain" &gt; CNAME git add -A git commit -m "rebuild pages at $&#123;rev&#125;" git push -q upstream HEAD:master 将.travis.yml和build.sh文件添加到git，commit和push以触发Travis CI构建 到https://travis-ci.org/查看构建是否通过 Travis CI实战这次之所以接触到Travis CI是因为学长组织了一个开源学习小组，要我帮忙做这个事。没接触之前觉得好难啊，接触之后觉得也没这么难，还挺好玩的。想看代码戳这里]]></content>
+    <content type="text"><![CDATA[什么是持续集成持续集成(Continuous Integration,简称CI)，指的是在一个项目中，任何人对代码库的任何改动都会触发CI服务器自动对项目进行构建，自动运行测试，甚至自动部署到测试环境。优点是随时发现问题，随时修复。 如何为Github上托管的开源项目用Travis CI进行持续集成什么是Travis CITravis CI是一个在线的、分布式的持续集成服务，用来构建及测试在Github托管的代码。 使用Travis CI先决环境要开始使用Travis CI，需要满足以下条件： 拥有一个Github账户 拥有Github上托管的项目的所有者权限 开始使用Travis CI 访问官方网站https://travis-ci.org/，使用github账户登入Travis CI 接受Travis CI的授权。 单击绿色激活按钮，然后选择要与Travis CI一起使用的项目 到Github仓库获取TOKEN。打开setting-&gt;Developer settings-&gt;Personal access tokens 到Travis添加TOKEN。setting-&gt;Environment Variables 添加.travis.yml文件到存储库以告知Travis CI要执行的操作。 12345678910language: "node_js"node_js: - "node"install: - "npm install gitbook -g" - "npm install -g gitbook-cli"script: - "gitbook build"after_success: - "sh build.sh" 添加build.sh脚本文件到存储库 123456789101112131415161718192021#!/bin/bashset -o errexit -o nounsetTRAVIS_BRANCH=masterif [ "$TRAVIS_BRANCH" != "master" ]then echo "This commit was made against the $TRAVIS_BRANCH and not the master! No deploy!" exit 0 fi rev=$(git rev-parse --short HEAD) cd _book git init git config user.name "Travis" git config user.email "evey_wong@163.com" git remote add upstream https://evey-huang:$TOKEN@github.com/yznu-cn/yznu-cn.github.io.git git fetch upstream git reset upstream/master #echo "custom domain" &gt; CNAME git add -A git commit -m "rebuild pages at $&#123;rev&#125;" git push -q upstream HEAD:master 将.travis.yml和build.sh文件添加到git，commit和push以触发Travis CI构建 到https://travis-ci.org/查看构建是否通过 Travis CI实战这次之所以接触到Travis CI是因为学长组织了一个开源学习小组，要我帮忙做这个事。没接触之前觉得好难啊，接触之后觉得也没这么难，还挺好玩的。想看代码戳这里]]></content>
       <categories>
         <category>git</category>
       </categories>
